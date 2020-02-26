@@ -198,7 +198,7 @@ DEPS_RE = re.compile("(" + ANY_ID.pattern + r")(:[^\W\d_]+[\w-]*)+", re.UNICODE)
 MULTI_DEPS_PATTERN = re.compile(r"{}(\|{})*".format(DEPS_RE.pattern, DEPS_RE.pattern))
 
 def parse_paired_list_value(value):
-    if fullmatch(MULTI_DEPS_PATTERN, value):
+    if fullmatch(MULTI_DEPS_PATTERN, text(value)):
         return [
             (part.split(":", 1)[1], parse_id_value(part.split(":")[0]))
             for part in value.split("|")
