@@ -475,8 +475,6 @@ class TestParsePairedListValue(unittest.TestCase):
             [('obl:arg:į', 25)]
         )
 
-
-
     def test_parse_empty(self):
         testcases = [
             "",
